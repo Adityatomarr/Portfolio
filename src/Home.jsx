@@ -13,7 +13,7 @@ export default function Home(){
                     <p className="fs-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae nihil velit iste consequuntur, veniam repellat ratione cupiditate minima quas ab adipisci esse iusto maiores modi, quia omnis illum eius aliquam.</p>
                 </div>
                 <div>
-                    <Link to="projects" class="large-button uppercase ff-serif fs-600 text-dark bg-white">Projects</Link>
+                    <Link to="projects" className="large-button uppercase ff-serif text-dark bg-white">Projects</Link>
                 </div>
             </div>
         </div>

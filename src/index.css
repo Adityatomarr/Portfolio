@@ -59,6 +59,10 @@ body{
   font-size: var(--fs-400) ;
   color : hsl( var(--clr-white) );
   background-color: hsl( var(--clr-dark) );
+  
+}
+.layout{
+  min-height: 100vh;
   display: grid;
   grid-template-rows: min-content 1fr;
 }
@@ -105,13 +109,22 @@ input,button, textarea, select{
 
 .grid-container{
   display: grid;
-
+  text-align: center;
+  place-items: center;
+  padding-inline: 1rem;
+}
+.grid-container *{
+  max-width: 50ch;
 }
 
 @media (min-width: 45rem){
   .grid-container{
+    text-align: left;
     column-gap: var(--container-gap, 2rem);
     grid-template-columns: minmax(2rem, 1fr) minmax(0, 60rem) minmax(0, 40rem) minmax(2rem,1fr);
+  }
+  .grid-container>*{
+    max-width: 60rem;
   }
   .grid-container> *:first-child{
     grid-column: 2;
@@ -195,6 +208,7 @@ input,button, textarea, select{
   display: inline-grid;
   position: relative;
   place-items: center;
+  font-size: 2rem;
   padding: 0 2em;
   border-radius: 50%;
   aspect-ratio: 1;
