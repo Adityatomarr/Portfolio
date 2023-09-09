@@ -54,17 +54,19 @@ h1, h2, h3, h4, h5, h6, p {
 
 body{
   line-height: 1.5;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   font-family: var(--ff-serif);
   font-size: var(--fs-400) ;
   color : hsl( var(--clr-white) );
   background-color: hsl( var(--clr-dark) );
+  /* border: 2px solid red; */
   
 }
 .layout{
   min-height: 100vh;
   display: grid;
   grid-template-rows: min-content 1fr;
+  min-width: 100vw;
 }
 
 img,picture{
@@ -122,6 +124,8 @@ input,button, textarea, select{
     text-align: left;
     column-gap: var(--container-gap, 2rem);
     grid-template-columns: minmax(2rem, 1fr) minmax(0, 60rem) minmax(0, 40rem) minmax(2rem,1fr);
+    height: 100%;
+      
   }
   .grid-container>*{
     max-width: 60rem;
@@ -132,8 +136,19 @@ input,button, textarea, select{
   }
   .grid-container > *:last-child{
     grid-column: 3;
+    align-self: end;
+    margin-bottom: 20vh;
     /* border: 1px solid red; */
   }
+  .home-image{
+    background-image: url("./assets/portfolio-image4.jpg");
+    background-size: cover;
+    /* position: absolute; */
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+   }
+  
 }
 
 
@@ -208,7 +223,7 @@ input,button, textarea, select{
   display: inline-grid;
   position: relative;
   place-items: center;
-  font-size: 2rem;
+  font-size: 1.75rem;
   padding: 0 2em;
   border-radius: 50%;
   aspect-ratio: 1;
@@ -290,3 +305,4 @@ input,button, textarea, select{
 .dot-indicators > [aria-selected="true"] {
   background-color: hsl( var(--clr-white) / 1); 
 }
+ 

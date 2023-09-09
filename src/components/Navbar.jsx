@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 const Navbar = () => {
   return (
     <nav>
-      <ul className="primary-navigation flex underline-indicators">
+      {/* <ul className="primary-navigation flex underline-indicators">
         <li className='text-white fs-500 ff-sans-cond letter-spacing-3'>
           <NavLink to="/" className={({isActive})=> isActive? "active" : "" } ><span>00</span>Home</NavLink>
         </li>
@@ -17,7 +17,7 @@ const Navbar = () => {
         <li className='text-white fs-500 ff-sans-cond letter-spacing-2'>
           <NavLink to="/contact" className={({isActive})=> isActive? "active" : "" } ><span>03</span>Contact</NavLink>
         </li>
-      </ul>
+      </ul> */}
     </nav>
   )
 }
