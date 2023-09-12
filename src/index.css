@@ -7,7 +7,7 @@
   
   /* font-sizes */
   --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
-  --fs-800: 3.5rem;
+  --fs-800: clamp(3.5rem, 6vw + 1rem, 6.25rem);
   --fs-700: 1.5rem;
   --fs-600: 1rem;
   --fs-500: 1.75rem;
@@ -23,7 +23,7 @@
 
 @media (min-width: 35em) {
   :root {
-      --fs-800: 5rem;
+
       --fs-700: 2.5rem;
       --fs-600: 1.5rem;
       --fs-400: 1rem;
@@ -33,7 +33,7 @@
 @media (min-width: 45em) {
   :root {
       /* font-sizes */
-      --fs-800: 6.25rem;
+      /* --fs-800: 6.25rem; */
       --fs-700: 3.5rem;
       --fs-600: 2rem;
       --fs-400: 1.125rem;
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 body{
   line-height: 1.5;
-  /* min-height: 100vh; */
+  min-height: 100vh;
   font-family: var(--ff-serif);
   font-size: var(--fs-400) ;
   color : hsl( var(--clr-white) );
@@ -62,11 +62,14 @@ body{
   /* border: 2px solid red; */
   
 }
+#root{
+  min-height: 100vh;
+}
 .layout{
   min-height: 100vh;
   display: grid;
   grid-template-rows: min-content 1fr;
-  min-width: 100vw;
+  /* min-width: 100vw; */
 }
 
 img,picture{
@@ -105,7 +108,7 @@ input,button, textarea, select{
 }
 .container{
   padding-inline: 2em;
-  max-width: 80rem;
+  max-width: 100rem;
   margin-inline:auto;
 }
 
@@ -116,19 +119,32 @@ input,button, textarea, select{
   padding-inline: 1rem;
 }
 .grid-container *{
-  max-width: 50ch;
+  max-width: 60ch;
 }
-
+.home-image{
+  background-image: url("./assets/portfolio-image-mobile.jpg");
+  background-size: cover;
+  background-position: bottom center;
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+ }
+ @media (min-width: 35rem) {
+  .home-image{
+    background-image: url("./assets/portfolio-image-tablet.jpg");
+   }
+}
 @media (min-width: 45rem){
   .grid-container{
     text-align: left;
     column-gap: var(--container-gap, 2rem);
-    grid-template-columns: minmax(2rem, 1fr) minmax(0, 60rem) minmax(0, 40rem) minmax(2rem,1fr);
+    grid-template-columns: minmax(2rem, 1fr) 70% 30% minmax(2rem,1fr);
     height: 100%;
       
   }
   .grid-container>*{
-    max-width: 60rem;
+    max-width: 70rem;
   }
   .grid-container> *:first-child{
     grid-column: 2;
@@ -136,20 +152,14 @@ input,button, textarea, select{
   }
   .grid-container > *:last-child{
     grid-column: 3;
-    align-self: end;
-    margin-bottom: 20vh;
     /* border: 1px solid red; */
   }
   .home-image{
     background-image: url("./assets/portfolio-image4.jpg");
-    background-size: cover;
-    /* position: absolute; */
-    z-index: 0;
-    width: 100%;
-    height: 100%;
+    background-position: right;
    }
-  
 }
+
 
 
 .flow > *:where(:not(:first-child)){
@@ -225,47 +235,33 @@ input,button, textarea, select{
   place-items: center;
   font-size: 1.75rem;
   padding: 0 2em;
-  border-radius: 50%;
-  aspect-ratio: 1;
+  border: 3px solid white;
+  aspect-ratio: 2.5/1;
   text-decoration: none;
-  border: 0;
-
+  margin-top: 2rem;
+  
+}
+.large-button:hover{
+  color:black;  
 }
 .large-button::after{
   content: '';
   position: absolute;
   z-index: -1;
-  width: 100%;
+  width: 0%;
   height: 100%;
-  border-radius: 50%;
-  background-color: hsl( var(--clr-white) / .15);
-  opacity: 0;
-  transition: opacity 500ms linear,transform 750ms ease-in-out;
+  background-color: hsl( var(--clr-white) );
+  transition: all 0.5s ease-in-out;
+  left: 0;
+  color : hsl( var(--clr-dark) );
 }
 
 .large-button:hover::after,
 .large-button:focus::after{
-  opacity :1;
-  transform: scale(1.5);
+  width: 100%;
 }
 
-.primary-navigation{
-  --gap: 8rem;
-  --underline-gap: 2rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 
-.primary-navigation a {
-  text-decoration: none;
-  color: var(--clr-white);
-}
-
-.primary-navigation a >span {
-  font-weight: 700;
-  margin-right: .5em;
-}
 
 .underline-indicators > *  {
   padding: var(--underline-gap, 1rem) 0;
@@ -279,11 +275,6 @@ input,button, textarea, select{
   border-color: hsl( var(--clr-white) / .5);
 }
 
-.active{
-  padding: var(--underline-gap, 1rem) 0;
-  cursor: pointer;
-  border-bottom: .2rem solid hsl( var(--clr-white) / 1 );
-}
 
 .tab-list{
   --gap:2rem;
