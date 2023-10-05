@@ -60,6 +60,7 @@ body{
   color : hsl( var(--clr-white) );
   background-color: hsl( var(--clr-dark) );
   /* border: 2px solid red; */
+  overflow-x: hidden;
   
 }
 #root{
