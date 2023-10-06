@@ -2,7 +2,8 @@
 :root {
   /* colors */
   --clr-dark: 230 35% 7%;
-  --clr-light: 231 77% 90%;
+  /* --clr-light: 145, 87%, 20%, 1; */
+  --clr-light: 215, 50%, 59%, 1;
   --clr-white: 0 0% 100%;
   
   /* font-sizes */
@@ -19,6 +20,7 @@
   --ff-serif: "Bellefair", serif;
   --ff-sans-cond: "Barlow Condensed", sans-serif;
   --ff-sans-normal: "Barlow", sans-serif;
+  --ff-gothic : "Dela Gothic one";
 }
 
 @media (min-width: 35em) {
@@ -194,6 +196,9 @@ input,button, textarea, select{
 .ff-serif { font-family: var(--ff-serif); } 
 .ff-sans-cond { font-family: var(--ff-sans-cond); } 
 .ff-sans-normal { font-family: var(--ff-sans-normal); } 
+.ff-gothic {font-family: var(--ff-gothic);}
+
+.fw-bold{ font-weight: 600;}
 
 .letter-spacing-1 { letter-spacing: 4.75px; } 
 .letter-spacing-2 { letter-spacing: 2.7px; } 

@@ -13,7 +13,7 @@ const Navbar = () => {
         aria-controls='primary-navigation' 
         aria-expanded='false '><span className='sr-only'>Menu</span>
       </button>
-      <nav>
+      <nav className='navbar'>
         <ul id="primary-navigation" 
         className={toggle? "primary-navigation flex underline-indicators expanded": "primary-navigation flex underline-indicators"}>
           <li className='text-white fs-500 ff-sans-cond letter-spacing-3'>
