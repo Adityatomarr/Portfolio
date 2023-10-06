@@ -1,5 +1,6 @@
 .primary-navigation{
-    
+    --gap: clamp(1.5rem , 4vw , 3rem);
+    /* --gap: 2rem; */
     --underline-gap: 2rem;
     list-style: none;
     margin: 0;
@@ -10,10 +11,18 @@
 
     /* background: linear-gradient(90deg, rgba(193, 68, 68, 0.13) 0%, rgba(188, 3, 255, 0.14) 100%); */
     /* resulting css */
-  }
-  .mobile-nav-toggle{
+}
+.mobile-nav-toggle{
     display: none;
-  }
+}
+.primary-header{
+  align-items: center;
+  justify-content: space-between;
+}
+.active{
+  padding-bottom: 2.2rem;
+  border-bottom: 5px solid white;
+}
 @media (max-width :35rem){
     .primary-navigation{
         --underline-gap: .5rem;
@@ -43,8 +52,8 @@
         right:1.75rem;
         background: transparent;
         border: 0;
-        background-image: url("../assets/ham-icon.png");
-        width: 1.5rem;
+        background-image: url("../assets/ham-icon1.png");
+        width: 2.5rem;
         aspect-ratio: 1;
       }
       .mobile-nav-toggle.expanded{
@@ -55,8 +64,9 @@
         right:1.75rem;
         background: transparent;
         border: 0;
-        background-image: url("../assets/cross-icon.png");
-        width: 1.5rem;
+        background-image: url("../assets/cross-icon1.png");
+        width: 2.5rem;
+        
         aspect-ratio: 1;
       }
 }
@@ -74,3 +84,43 @@
 @media (min-width:45rem){
     
   }
+.logo{
+  margin-top:1.5rem;
+  margin-left: clamp(1.5rem , 5vw , 3.5rem); ;
+}
+
+
+@media (max-width:45em) and (min-width:35em){
+  .primary-navigation{
+    padding-inline: 1.75rem;
+  }
+  .primary-navigation a>span{
+    display: none;
+  }
+  .layout{
+    gap:3rem;
+   }
+}
+@media (min-width:50em){
+  .primary-navigation{
+    margin-top: 2rem;
+    padding-inline: clamp(2rem ,5vw, 7rem);
+
+  }
+
+  .primary-header::after{
+    content: '';
+    height:2px;
+    position: relative;
+    display: block;
+    background: white;
+    width: 100%;
+    order:1;
+    margin-top: 2rem;
+  }
+  
+  nav{
+    order:2;
+  };
+}
+

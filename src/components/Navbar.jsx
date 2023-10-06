@@ -1,13 +1,13 @@
 import {React , useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import "./navbar.css"
-import logo from "../assets/logo.png"
+import logo from "../assets/logo1.png"
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
     <div className='primary-header flex' >
-      <img width={"60px"} height={"60px"}src={logo}></img>
+      <img className='logo' width={"50px"} height={"50px"}src={logo}></img>
       <button className= {toggle ? 'mobile-nav-toggle expanded ': 'mobile-nav-toggle'}
         onClick={()=>setToggle(!toggle)}
         aria-controls='primary-navigation' 

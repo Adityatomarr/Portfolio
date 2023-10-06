@@ -135,6 +135,7 @@ input,button, textarea, select{
   .home-image{
     background-image: url("./assets/portfolio-image-tablet.jpg");
    }
+   
 }
 @media (min-width: 45rem){
   .grid-container{
